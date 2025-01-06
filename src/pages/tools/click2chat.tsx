@@ -1,10 +1,11 @@
-import Link from "next/link";
+import { env } from "@/env.mjs";
+// import Link from "next/link";
 import { useState } from "react";
 
 import { SignInButton } from "@clerk/nextjs";
 import { countries } from "country-list-json";
 
-import { Github } from "lucide-react";
+import { /*Github*/ } from "lucide-react";
 
 import PublicHeader from "@/components/molecule/public-header";
 import SEOHead from "@/components/molecule/seo-head";
@@ -30,7 +31,7 @@ function Click2Chat() {
   return (
     <div className="flex h-[100dvh] flex-col">
       <SEOHead
-        title="Click to Chat by WasepJe.com"
+        title={`Click to Chat by ${env.NEXT_PUBLIC_APP_DOMAIN}`}
         description="Stop cluttering your contact list. Click to WhatsApp temporary contacts."
         path="/tools/click2chat"
         ogPath="/click2chat.png"
@@ -70,12 +71,12 @@ function Click2Chat() {
         </Button>
       </form>
       <div className="mx-auto flex w-full flex-row items-center justify-center space-x-2 px-2 py-6 md:hidden">
-        <Button asChild variant="ghost" size="sm" className="text-xs">
+        {/* <Button asChild variant="ghost" size="sm" className="text-xs">
           <Link href="https://github.com/afrieirham/wasepje" target="_blank">
             <Github className="mr-2 h-4 w-4" />
             Star us on GitHub
           </Link>
-        </Button>
+        </Button> */}
         <SignInButton>
           <Button variant="outline" size="sm" className="text-xs">
             Sign Up

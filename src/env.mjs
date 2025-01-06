@@ -34,6 +34,8 @@ export const env = createEnv({
     NEXT_PUBLIC_PRO_MONTHLY_URL: z.string().url(),
     NEXT_PUBLIC_PRO_ANNUALLY_URL: z.string().url(),
     NEXT_PUBLIC_BILLING_PORTAL_URL: z.string().url(),
+    NEXT_PUBLIC_APP_NAME: z.string(),
+    NEXT_PUBLIC_APP_DOMAIN: z.string(),
   },
 
   /**
@@ -47,6 +49,8 @@ export const env = createEnv({
     NEXT_PUBLIC_PRO_MONTHLY_URL: process.env.NEXT_PUBLIC_PRO_MONTHLY_URL,
     NEXT_PUBLIC_PRO_ANNUALLY_URL: process.env.NEXT_PUBLIC_PRO_ANNUALLY_URL,
     NEXT_PUBLIC_BILLING_PORTAL_URL: process.env.NEXT_PUBLIC_BILLING_PORTAL_URL,
+    NEXT_PUBLIC_APP_NAME: process.env.NEXT_PUBLIC_APP_NAME,
+    NEXT_PUBLIC_APP_DOMAIN: process.env.NEXT_PUBLIC_APP_DOMAIN,
 
     DATABASE_URL: process.env.DATABASE_URL,
     CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,

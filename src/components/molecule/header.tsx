@@ -21,9 +21,9 @@ function Header() {
               height={40}
               className="h-10 w-10"
               src="/logo.png"
-              alt="wasepje.com logo"
+              alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
             />
-            <p className="font-bold">WasepJe.com</p>
+            <p className="font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
           </Link>
           <div className="space-x-2">
             <UserButton
@@ -46,9 +46,9 @@ function Header() {
             height={40}
             className="h-10 w-10"
             src="/logo.png"
-            alt="wasepje.com logo"
+            alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
           />
-          <p className="font-bold">WasepJe.com</p>
+          <p className="font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
         </Link>
         <div className="space-x-2">
           <UserButton

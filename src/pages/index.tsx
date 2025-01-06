@@ -1,9 +1,10 @@
+import { env } from "@/env.mjs";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
 import { SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
-import { Github, MoveRight } from "lucide-react";
+import { /*Github,*/ MoveRight } from "lucide-react";
 import BackgroundPlayer from "next-video/background-player";
 
 import Footer from "@/components/molecule/footer";
@@ -24,7 +25,7 @@ export default function Index() {
   return (
     <div className="">
       <SEOHead
-        title="WhatsApp Link Rotator | WasepJe.com"
+        title={`WhatsApp Link Rotator | ${env.NEXT_PUBLIC_APP_DOMAIN}`}
         description="Open-Source WhatsApp Link Rotator, an alternative to wasap.my"
         path="/"
         ogPath="/og.png"
@@ -41,9 +42,9 @@ export default function Index() {
                 height={40}
                 className="h-10 w-10"
                 src="/logo.png"
-                alt="wasepje.com logo"
+                alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
               />
-              <p className="font-bold">WasepJe.com</p>
+              <p className="font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
             </Link>
           </div>
           <Button size="sm" variant="ghost" asChild>
@@ -59,7 +60,7 @@ export default function Index() {
             One link, multiple numbers. Simple as that.
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            wasep je, the open-source whatsapp link rotator, wasap.my
+            {env.NEXT_PUBLIC_APP_NAME}, the open-source whatsapp link rotator, wasap.my
             alternative.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-2 sm:flex-row">
@@ -81,7 +82,7 @@ export default function Index() {
                 </Link>
               </Button>
             </SignedIn>
-            <Button
+            {/* <Button
               asChild
               className="w-full space-x-1 sm:w-auto"
               variant="secondary"
@@ -93,7 +94,7 @@ export default function Index() {
                 <Github className="h-4 w-4" />
                 <span>Star us on GitHub</span>
               </Link>
-            </Button>
+            </Button> */}
           </div>
         </div>
         <div className="mt-16 flex w-full items-center justify-center px-2">
@@ -103,7 +104,7 @@ export default function Index() {
             height={1000}
             src="/diagram.svg"
             className="w-full max-w-screen-md"
-            alt="wasepje redirection visualization"
+            alt={`${env.NEXT_PUBLIC_APP_NAME} redirection visualization`}
           />
         </div>
       </div>

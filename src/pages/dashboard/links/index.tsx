@@ -1,3 +1,4 @@
+import { env } from "@/env.mjs";
 import Link from "next/link";
 import { type FormEvent, useEffect, useState } from "react";
 
@@ -75,7 +76,7 @@ export default function Dashboard() {
   return (
     <DashboardLayout>
       <SEOHead
-        title="Dashboard | WasepJe.com"
+        title={`Dashboard | ${env.NEXT_PUBLIC_APP_DOMAIN}`}
         description="Open-Source WhatsApp Link Rotator, an alternative to wasap.my"
         path="/"
         ogPath="/og.png"

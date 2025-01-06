@@ -1,3 +1,4 @@
+import { env } from "@/env.mjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -13,14 +14,14 @@ export default function Footer() {
                 height={40}
                 className="h-10 w-10"
                 src="/logo.png"
-                alt="wasepje.com logo"
+                alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
               />
-              <p className="font-bold">WasepJe.com</p>
+              <p className="font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
             </Link>
             <p className="text-sm leading-6 text-gray-600">
               Open-Source WhatsApp Link Rotator, an alternative to wasap.my
             </p>
-            <div className="flex space-x-6">
+            {/* <div className="flex space-x-6">
               <a
                 href="https://x.com/afrieirham_"
                 className="text-gray-400 hover:text-gray-500"
@@ -49,7 +50,7 @@ export default function Footer() {
                   />
                 </svg>
               </a>
-            </div>
+            </div> */}
           </div>
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
@@ -88,7 +89,7 @@ export default function Footer() {
         </div>
         <div className="mt-16 border-t border-gray-900/10 pt-8 sm:mt-20 lg:mt-24">
           <p className="text-xs leading-5 text-gray-500">
-            &copy; {new Date().getFullYear()} WasepJe.com, All rights reserved.
+            &copy; {new Date().getFullYear() + " " + env.NEXT_PUBLIC_APP_DOMAIN}, All rights reserved.
           </p>
         </div>
       </div>

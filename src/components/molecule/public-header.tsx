@@ -1,8 +1,9 @@
+import { env } from "@/env.mjs";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
-import { Github, MoveRight } from "lucide-react";
+import { /*Github,*/ MoveRight } from "lucide-react";
 import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 
 function PublicHeader() {
@@ -19,19 +20,19 @@ function PublicHeader() {
               height={40}
               className="h-10 w-10"
               src="/logo.png"
-              alt="wasepje.com logo"
+              alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
             />
-            <p className="font-bold">WasepJe.com</p>
+            <p className="font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
           </Link>
         </div>
 
         <div className="hidden space-x-4 md:flex md:flex-1 md:justify-end">
-          <Button asChild variant="outline">
+          {/* <Button asChild variant="outline">
             <Link href="https://github.com/afrieirham/wasepje" target="_blank">
               <Github className="mr-2 h-4 w-4" />
               Star us on GitHub
             </Link>
-          </Button>
+          </Button> */}
           <SignedOut>
             <SignInButton forceRedirectUrl="/dashboard/links">
               <Button>

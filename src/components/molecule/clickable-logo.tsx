@@ -1,3 +1,4 @@
+import { env } from "@/env.mjs";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,9 +10,9 @@ export default function ClickableLogo() {
         height={40}
         className="h-9 w-9"
         src="/logo.png"
-        alt="wasepje.com logo"
+        alt={`${env.NEXT_PUBLIC_APP_DOMAIN} logo`}
       />
-      <p className="text-sm font-bold">WasepJe.com</p>
+      <p className="text-sm font-bold">{env.NEXT_PUBLIC_APP_DOMAIN}</p>
     </Link>
   );
 }

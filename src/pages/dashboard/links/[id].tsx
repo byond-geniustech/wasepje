@@ -1,3 +1,4 @@
+import { env } from "@/env.mjs";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { type FormEvent, useEffect, useState } from "react";
@@ -99,7 +100,7 @@ function EditLink() {
   return (
     <DashboardLayout>
       <SEOHead
-        title="Edit Link | WasepJe.com"
+        title={`Edit Link | ${env.NEXT_PUBLIC_APP_DOMAIN}`}
         description="Open-Source WhatsApp Link Rotator, an alternative to wasap.my"
         path="/"
         ogPath="/og.png"
